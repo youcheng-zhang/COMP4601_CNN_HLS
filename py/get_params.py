@@ -17,7 +17,6 @@
  * PROJECT:     nnet_stream
  * Description: Handritten digit recognition algorithm based trained on MNIST dateset
 '''
-
 from tensorflow.examples.tutorials.mnist import input_data
 import numpy as np
 import tensorflow as tf

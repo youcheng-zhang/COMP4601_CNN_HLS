@@ -22,15 +22,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "headers/defines.h"
-#include <hls_stream.h>
+#include <hls_video.h>
 
 
-#include "ap_fixed.h"
+//#include "ap_fixed.h"
 
 #define EXP_WIDTH	16
 #define INT_WIDTH	4
 
-typedef ap_fixed<EXP_WIDTH, INT_WIDTH> float24_t;
+typedef float float24_t;
 
 
 #define eps 0.1
@@ -55,7 +55,7 @@ int main()
 		FC3_out>>fc_layer3_out[i];
 	}
 
-	FILE* fc_layer3_content = fopen("../../../../ref/fc_layer3_py.out","r");
+	FILE* fc_layer3_content = fopen("C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream/ref/fc_layer3_py.out","r");
 	if(fc_layer3_content == NULL)
 	{
 		printf("Couldn't open ref/fc_layer3_py.out");
