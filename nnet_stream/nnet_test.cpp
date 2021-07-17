@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include "headers/defines.h"
 #include <hls_video.h>
-
+#include <algorithm>
 
 //#include "ap_fixed.h"
 
@@ -39,7 +39,7 @@ void nnet(hls::stream<float24_t> &fc3_out);
 
 int main()
 {
-
+	int passCount = 0;
 	hls::stream<float24_t> FC3_out("test_FC3_out");
 
 	float24_t fc_layer3_out[FC3_ACT_SIZE];
@@ -75,23 +75,46 @@ int main()
 
 	printf("Checking FC Layer 3 ...\n");
 
-
-	for(i = 0; i < FC3_ACT_SIZE; i++)
-	{
-		total_values++;
-
-		if((float)fc_layer3_out[i] - fc_layer3_ref[i] > eps || fc_layer3_ref[i] - (float)fc_layer3_out[i] > eps)
-		{
-			if(correct_values + 1 == total_values)
-				printf("Missmatch in FC3 check\n");
-		}
-			else
-				correct_values++;
-
+	float24_t refMax = fc_layer3_ref[0];
+	int refMaxIndex = 0;
+	for(int i = 1;i < 11; i++) {
+	  /* We are comparing largest variable with every element
+	   * of array. If there is an element which is greater than
+	   * largest variable value then we are copying that variable
+	   * to largest, this way we have the largest element copied
+	   * to the variable named "largest" at the end of the loop
+	   *
+	   */
+	  if(refMax < fc_layer3_ref[i])
+		  refMax = fc_layer3_ref[i];
+	  	  refMaxIndex = i;
 	}
 
-	printf("DONE: %d out of %d are correct\n\n", correct_values, total_values);
+	float24_t outMax = fc_layer3_out[0];
+	int outMaxIndex = 0;
+	for(int i = 1;i < 11; i++) {
+	  /* We are comparing largest variable with every element
+	   * of array. If there is an element which is greater than
+	   * largest variable value then we are copying that variable
+	   * to largest, this way we have the largest element copied
+	   * to the variable named "largest" at the end of the loop
+	   *
+	   */
+	  if(outMax < fc_layer3_out[i])
+		  outMax = fc_layer3_out[i];
+		  outMaxIndex = i;
+	}
 
+	if (outMaxIndex == refMaxIndex){
+		printf("test 1 pass\n");
+		passCount ++;
+	}
+	else{
+		printf("test 1 fail\n");
+	}
+
+
+	printf("%d out of 1 test passed", passCount);
 
 	return 0;
 
