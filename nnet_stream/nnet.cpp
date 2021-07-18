@@ -22,7 +22,8 @@
 #include "headers/weights.h"
 #include "headers/defines.h"
 #include "headers/activations.h"
-#include <hls_video.h>
+#include "C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp"
+#include <hls_stream.h>
 
 //#include "ap_fixed.h"
 
@@ -39,7 +40,8 @@ void conv_layer1(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
 	int i, j, k, filter;
 	float24_t sum, placeholder;
 	int row_offset, col_offset, channel_offset;
-	hls::LineBuffer<CONV1_BUFFER_SIZE, 1, float24_t> conv_buff;
+	//float24_t
+	xf::cv::LineBuffer<CONV1_BUFFER_SIZE, 1, float24_t> conv_buff;
 
 	/*
 	 * Read the initial buffer
@@ -109,7 +111,7 @@ void conv_layer2(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
 	int i, j, k, filter;
 	float24_t sum, placeholder;
 	int row_offset, col_offset, channel_offset;
-	hls::LineBuffer<CONV2_BUFFER_SIZE, 1, float24_t> conv_buff;
+	xf::cv::LineBuffer<CONV2_BUFFER_SIZE, 1, float24_t> conv_buff;
 
 	/*
 	 * Read the initial buffer
@@ -174,7 +176,7 @@ void pool_layer1(hls::stream<float24_t>& out, hls::stream<float24_t>& in) {
 
 	int i, j, k, l, m;
 	float24_t read;
-	hls::LineBuffer<POOL1_BUFFER_SIZE, 1, float24_t> pool_buff;
+	xf::cv::LineBuffer<POOL1_BUFFER_SIZE, 1, float24_t> pool_buff;
 
 	for (i = 0; i < P1_SIZE; i++)
 		pool_layer1_label6: for (l = 0; l < P1_KERNEL_SIZE; l++) {
@@ -218,7 +220,7 @@ void pool_layer2(hls::stream<float24_t>& out, hls::stream<float24_t>& in) {
 
 	int i, j, k, l, m;
 	float24_t read;
-	hls::LineBuffer<POOL2_BUFFER_SIZE, 1, float24_t> pool_buff;
+	xf::cv::LineBuffer<POOL2_BUFFER_SIZE, 1, float24_t> pool_buff;
 
 	for (i = 0; i < P2_SIZE; i++)
 		pool_layer2_label28: for (l = 0; l < P2_KERNEL_SIZE; l++) {

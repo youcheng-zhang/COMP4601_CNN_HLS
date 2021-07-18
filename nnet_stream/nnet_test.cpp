@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "headers/defines.h"
-#include <hls_video.h>
+#include <hls_stream.h>
 #include <algorithm>
 
 //#include "ap_fixed.h"
@@ -55,7 +55,7 @@ int main()
 		FC3_out>>fc_layer3_out[i];
 	}
 
-	FILE* fc_layer3_content = fopen("C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream/ref/fc_layer3_py.out","r");
+	FILE* fc_layer3_content = fopen("C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/ref/fc_layer3_py.out","r");
 	if(fc_layer3_content == NULL)
 	{
 		printf("Couldn't open ref/fc_layer3_py.out");
