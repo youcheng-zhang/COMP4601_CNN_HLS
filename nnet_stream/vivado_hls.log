@@ -1,27 +1,20 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'xqsxl' on host 'laptop-iqip4voh' (Windows NT_amd64 version 6.2) on Thu Jul 08 19:19:54 +1000 2021
-INFO: [HLS 200-10] In directory 'C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream'
-Sourcing Tcl script 'C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream/nnet_stream/solution2/csim.tcl'
-INFO: [HLS 200-10] Opening project 'C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream/nnet_stream'.
-INFO: [HLS 200-10] Opening solution 'C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream/nnet_stream/solution2'.
+INFO: [HLS 200-10] For user 'Yunrui' on host 'desktop-i1qgl7p' (Windows NT_amd64 version 6.2) on Sun Jul 18 14:37:06 +1000 2021
+INFO: [HLS 200-10] In directory 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream'
+Sourcing Tcl script 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1/csim.tcl'
+INFO: [HLS 200-10] Opening project 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream'.
+INFO: [HLS 200-10] Opening solution 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 13ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
    Compiling ../../../../nnet_test.cpp in debug mode
-   Compiling ../../../../nnet.cpp in debug mode
-csim.mk:76: recipe for target 'obj/nnet.o' failed
-make: *** [obj/nnet.o] Error 1
-ERROR: [SIM 211-100] CSim file generation failed: compilation error(s).
+   Generating csim.exe
+
+
+
+
+Checking FC Layer 3 ...
+test 1 pass
+1 out of 1 test passedINFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-5
-    while executing
-"source C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream/nnet_stream/solution2/csim.tcl"
-    invoked from within
-"hls::main C:/Users/xqsxl/Desktop/comp4601/CNN-using-HLS-master/nnet_stream/nnet_stream/solution2/csim.tcl"
-    ("uplevel" body line 1)
-    invoked from within
-"uplevel 1 hls::main {*}$args"
-    (procedure "hls_proc" line 5)
-    invoked from within
-"hls_proc $argv"
