@@ -320,7 +320,7 @@ void fc_layer3(hls::stream<float24_t> &out, hls::stream<float24_t> &in,
 
 }
 
-void nnet(hls::stream<float24_t> &fc3_out, hls::stream<float24_t> &img_in) {
+void nnet(hls::stream<float24_t> &fc3_out) {
 	hls::stream<float24_t> conv1_out("conv1_out");
 	hls::stream<float24_t> conv2_out("conv2_out");
 	hls::stream<float24_t> pool1_out("pool1_out");
@@ -328,22 +328,8 @@ void nnet(hls::stream<float24_t> &fc3_out, hls::stream<float24_t> &img_in) {
 	hls::stream<float24_t> fc1_out("fc1_out");
 	hls::stream<float24_t> fc2_out("fc2_out");
 	hls::stream<float24_t> image_in("image_in");
-	//image_in << image[i];
-	while(!img_in.empty()){
-			//img_in >> image[i];
-			conv_layer1(conv1_out, img_in, conv_layer1_weights, conv_layer1_bias);
-			pool_layer1(pool1_out, conv1_out);
 
-			conv_layer2(conv2_out, pool1_out, conv_layer2_weights, conv_layer2_bias);
-			pool_layer2(pool2_out, conv2_out);
-
-			fc_layer1(fc1_out, pool2_out, fc_layer1_weights, fc_layer1_bias);
-			fc_layer2(fc2_out, fc1_out, fc_layer2_weights, fc_layer2_bias);
-			fc_layer3(fc3_out, fc2_out, fc_layer3_weights, fc_layer3_bias);
-
-
-	}
-	/*for (int i = 0; i < IMAGE_SIZE * IMAGE_SIZE * IMAGE_CHANNELS; i++)
+	for (int i = 0; i < IMAGE_SIZE * IMAGE_SIZE * IMAGE_CHANNELS; i++)
 		image_in << image[i];
 
 	conv_layer1(conv1_out, image_in, conv_layer1_weights, conv_layer1_bias);
@@ -354,5 +340,5 @@ void nnet(hls::stream<float24_t> &fc3_out, hls::stream<float24_t> &img_in) {
 
 	fc_layer1(fc1_out, pool2_out, fc_layer1_weights, fc_layer1_bias);
 	fc_layer2(fc2_out, fc1_out, fc_layer2_weights, fc_layer2_bias);
-	fc_layer3(fc3_out, fc2_out, fc_layer3_weights, fc_layer3_bias);*/
+	fc_layer3(fc3_out, fc2_out, fc_layer3_weights, fc_layer3_bias);
 }
