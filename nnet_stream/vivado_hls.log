@@ -1,20 +1,327 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'Yunrui' on host 'desktop-i1qgl7p' (Windows NT_amd64 version 6.2) on Sun Jul 18 14:37:06 +1000 2021
-INFO: [HLS 200-10] In directory 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream'
-Sourcing Tcl script 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1/csim.tcl'
-INFO: [HLS 200-10] Opening project 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream'.
-INFO: [HLS 200-10] Opening solution 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1'.
+INFO: [HLS 200-10] For user 'xqsxl' on host 'laptop-iqip4voh' (Windows NT_amd64 version 6.2) on Wed Jul 28 18:10:00 +1000 2021
+INFO: [HLS 200-10] In directory 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream'
+Sourcing Tcl script 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream/nnet_stream'.
+INFO: [HLS 200-10] Adding design file 'nnet.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'nnet_test.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 13ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../nnet_test.cpp in debug mode
-   Generating csim.exe
-
-
-
-
-Checking FC Layer 3 ...
-test 1 pass
-1 out of 1 test passedINFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'nnet.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:335:35
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:335:56
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:338:36
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:338:57
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:341:32
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:341:51
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:342:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:342:49
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:343:30
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: nnet.cpp:343:49
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: nnet.cpp:332:2
+WARNING: [HLS 200-471] Dataflow form checks found 11 issue(s) in file nnet.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:15 . Memory (MB): peak = 889.203 ; gain = 795.398
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:15 . Memory (MB): peak = 889.203 ; gain = 795.398
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_pixels_up' into 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1018).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer1' (nnet.cpp:53).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer1' (nnet.cpp:91).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer1' (nnet.cpp:100).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_bottom_row' into 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1042).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer1' (nnet.cpp:54).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer1' (nnet.cpp:92).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer1' (nnet.cpp:101).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::getval' into 'conv_layer1' (nnet.cpp:76).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_pixels_up' into 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1018).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer2' (nnet.cpp:123).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer2' (nnet.cpp:158).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer2' (nnet.cpp:167).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_bottom_row' into 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1042).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer2' (nnet.cpp:124).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer2' (nnet.cpp:159).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer2' (nnet.cpp:168).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::getval' into 'conv_layer2' (nnet.cpp:146).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 889.203 ; gain = 795.398
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet.cpp:83) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet.cpp:150) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet.cpp:277) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet.cpp:298) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet.cpp:319) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:00:17 . Memory (MB): peak = 889.203 ; gain = 795.398
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pool_layer2_label38' (nnet.cpp:247) in function 'pool_layer2' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pool_layer2_label9' (nnet.cpp:253) in function 'pool_layer2' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pool_layer1_label20' (nnet.cpp:204) in function 'pool_layer1' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pool_layer1_label7' (nnet.cpp:210) in function 'pool_layer1' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'conv_layer1_label8' (nnet.cpp:71) in function 'conv_layer1' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'conv_layer1_label1' (nnet.cpp:89) in function 'conv_layer1' automatically.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label38' (nnet.cpp:247) in function 'pool_layer2' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label9' (nnet.cpp:253) in function 'pool_layer2' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label6' (nnet.cpp:182) in function 'pool_layer1' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label20' (nnet.cpp:204) in function 'pool_layer1' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label7' (nnet.cpp:210) in function 'pool_layer1' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer2' completely with a factor of 127.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer2' completely with a factor of 127.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer2' completely with a factor of 127.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer1' completely with a factor of 99.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer1_label8' (nnet.cpp:71) in function 'conv_layer1' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer1_label1' (nnet.cpp:89) in function 'conv_layer1' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer1' completely with a factor of 99.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer1' completely with a factor of 99.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights' in dimension 3 automatically.
+WARNING: [XFORM 203-104] Completely partitioning array 'pool_buff.val' (nnet.cpp:223) accessed through non-constant indices on dimension 1 (nnet.cpp:232:8), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'pool_buff.val' (nnet.cpp:223) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'pool_buff.val' (nnet.cpp:179) accessed through non-constant indices on dimension 1 (nnet.cpp:189:8), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'pool_buff.val' (nnet.cpp:179) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'conv_buff.val' (nnet.cpp:114) accessed through non-constant indices on dimension 1 (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:984:5), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'conv_buff.val' (nnet.cpp:114) in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'conv_buff.val' (nnet.cpp:44) accessed through non-constant indices on dimension 1 (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:984:5), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'conv_buff.val' (nnet.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet.cpp:83) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet.cpp:150) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet.cpp:277) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet.cpp:298) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet.cpp:319) automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_1_proc' (nnet.cpp:332) to a process function for dataflow in function 'nnet'.
+INFO: [XFORM 203-712] Applying dataflow to function 'nnet', detected/extracted 8 process function(s): 
+	 'Loop_1_proc49'
+	 'conv_layer1'
+	 'pool_layer1'
+	 'conv_layer2'
+	 'pool_layer2'
+	 'fc_layer1'
+	 'fc_layer2'
+	 'fc_layer3'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (nnet.cpp:229:53) to (nnet.cpp:232:8) in function 'pool_layer2'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (nnet.cpp:186:21) to (nnet.cpp:189:8) in function 'pool_layer1'... converting 4 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 889.203 ; gain = 795.398
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:306:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:310:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:315:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:285:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:289:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:294:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:264:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:268:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:273:4)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:25 . Memory (MB): peak = 889.203 ; gain = 795.398
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'nnet' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_1_proc49' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 26.028 seconds; current allocated memory: 286.274 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.117 seconds; current allocated memory: 286.353 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.585 seconds; current allocated memory: 289.185 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.877 seconds; current allocated memory: 293.110 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 33.434 seconds; current allocated memory: 300.304 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.628 seconds; current allocated memory: 352.868 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.141 seconds; current allocated memory: 356.415 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.074 seconds; current allocated memory: 360.998 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.259 seconds; current allocated memory: 362.044 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.415 seconds; current allocated memory: 363.768 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.488 seconds; current allocated memory: 363.990 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 364.328 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.333 seconds; current allocated memory: 364.658 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.218 seconds; current allocated memory: 364.949 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 365.209 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.213 seconds; current allocated memory: 365.510 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'nnet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.231 seconds; current allocated memory: 365.618 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.667 seconds; current allocated memory: 366.189 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_1_proc49' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_1_proc49_image_r' to 'Loop_1_proc49_imabkb' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_1_proc49'.
+INFO: [HLS 200-111]  Elapsed time: 0.488 seconds; current allocated memory: 366.540 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_conv_layer1_weights_s' to 'conv_layer1_conv_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer1_conv_layer1_bias' to 'conv_layer1_conv_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_fadd_32ns_32ns_32_4_full_dsp_1' to 'nnet_fadd_32ns_32eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_fmul_32ns_32ns_32_3_max_dsp_1' to 'nnet_fmul_32ns_32fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_fcmp_32ns_32ns_1_2_1' to 'nnet_fcmp_32ns_32g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mux_1007_32_1_1' to 'nnet_mux_1007_32_hbi' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'conv_layer1' is 6373 from HDL expression: (~((ap_predicate_op236_read_state2 == 1'b1) & (in_V_empty_n == 1'b0)) & (icmp_ln50_fu_2099_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mux_1007_32_hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer1'.
+INFO: [HLS 200-111]  Elapsed time: 0.495 seconds; current allocated memory: 370.451 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'nnet_mux_1127_32_1_1' to 'nnet_mux_1127_32_ibs' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mux_1127_32_ibs': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer1'.
+INFO: [HLS 200-111]  Elapsed time: 10.871 seconds; current allocated memory: 481.752 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_weights' to 'conv_layer2_conv_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_layer2_bias' to 'conv_layer2_conv_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_mux_1287_32_1_1' to 'nnet_mux_1287_32_lbW' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'conv_layer2' is 8164 from HDL expression: (~((ap_predicate_op293_read_state2 == 1'b1) & (in_V_empty_n == 1'b0)) & (icmp_ln120_fu_3909_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mux_1287_32_lbW': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer2'.
+INFO: [HLS 200-111]  Elapsed time: 6.101 seconds; current allocated memory: 552.560 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_mux_967_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer2'.
+INFO: [HLS 200-111]  Elapsed time: 3.632 seconds; current allocated memory: 573.602 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fc_layer1_fc_layer1_weights' to 'fc_layer1_fc_layemb6' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer1'.
+INFO: [HLS 200-111]  Elapsed time: 1.244 seconds; current allocated memory: 579.569 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fc_layer2_fc_layer2_weights' to 'fc_layer2_fc_layencg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer2'.
+INFO: [HLS 200-111]  Elapsed time: 0.587 seconds; current allocated memory: 581.250 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fc_layer3_fc_layer3_weights' to 'fc_layer3_fc_layeocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer3'.
+INFO: [HLS 200-111]  Elapsed time: 0.547 seconds; current allocated memory: 582.915 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'nnet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc3_out_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'nnet' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'nnet'.
+INFO: [HLS 200-111]  Elapsed time: 0.496 seconds; current allocated memory: 584.365 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 89.85 MHz
+INFO: [RTMG 210-279] Implementing memory 'Loop_1_proc49_imabkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_conv_cud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer1_conv_dEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_jbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'conv_layer2_conv_kbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'fc_layer1_fc_layemb6_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'fc_layer1_output_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-279] Implementing memory 'fc_layer2_fc_layencg_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'fc_layer2_output_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-279] Implementing memory 'fc_layer3_fc_layeocq_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'fc_layer3_output_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'image_in_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'conv1_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'pool1_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'conv2_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'pool2_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fc1_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fc2_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:20 ; elapsed = 00:01:48 . Memory (MB): peak = 889.203 ; gain = 795.398
+INFO: [VHDL 208-304] Generating VHDL RTL for nnet.
+INFO: [VLOG 209-307] Generating Verilog RTL for nnet.
+INFO: [HLS 200-112] Total elapsed time: 107.862 seconds; peak allocated memory: 584.365 MB.
