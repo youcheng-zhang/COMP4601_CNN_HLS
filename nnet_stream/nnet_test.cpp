@@ -26,6 +26,7 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+#include <ctime>
 
 //#include "ap_fixed.h"
 
@@ -51,7 +52,10 @@ int main()
 	int i,j,k;
 	int correct_values, total_values;
 
+	const clock_t begin_time = clock();
 	nnet(FC3_out);
+
+	std::cout << "this is the time difference" << float( clock () - begin_time );
 
 	for(i = 0; i < FC3_ACT_SIZE; i++) {
 		FC3_out>>fc_layer3_out[i];
