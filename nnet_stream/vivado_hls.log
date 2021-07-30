@@ -1,12 +1,985 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'Yunrui' on host 'desktop-i1qgl7p' (Windows NT_amd64 version 6.2) on Thu Jul 29 16:54:27 +1000 2021
-INFO: [HLS 200-10] In directory 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream'
-Sourcing Tcl script 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1/csynth.tcl'
-INFO: [HLS 200-10] Opening project 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream'.
+INFO: [HLS 200-10] For user 'xqsxl' on host 'laptop-iqip4voh' (Windows NT_amd64 version 6.2) on Thu Jul 29 20:53:40 +1000 2021
+INFO: [HLS 200-10] In directory 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream'
+Sourcing Tcl script 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream/nnet_stream/Unroll_ultra/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream/nnet_stream'.
 INFO: [HLS 200-10] Adding design file 'nnet.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'nnet_test.cpp' to the project
-INFO: [HLS 200-10] Opening solution 'C:/School/comp4601/Project/COMP4601_CNN_HLS/nnet_stream/nnet_stream/solution1'.
+INFO: [HLS 200-10] Opening solution 'C:/Users/xqsxl/Desktop/comp4601/COMP4601_CNN_HLS/nnet_stream/nnet_stream/Unroll_ultra'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 13ns.
-INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-10] Setting target device to 'xczu7ev-ffvc1156-2-e'
 INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
 INFO: [HLS 200-10] Analyzing design file 'nnet.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: nnet.cpp:344:2
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file nnet.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 890.020 ; gain = 796.625
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 890.020 ; gain = 796.625
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-489] Unrolling loop 'conv_layer1_label8' (nnet.cpp:71) in function 'conv_layer1(hls::stream<float, 0>&, hls::stream<float, 0>&, float (*) [4][1][8], float*)' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label20' (nnet.cpp:204) in function 'pool_layer1(hls::stream<float, 0>&, hls::stream<float, 0>&)' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label38' (nnet.cpp:247) in function 'pool_layer2(hls::stream<float, 0>&, hls::stream<float, 0>&)' completely with a factor of 1.
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_pixels_up' into 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1018).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer1' (nnet.cpp:53).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer1' (nnet.cpp:91).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer1' (nnet.cpp:100).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_bottom_row' into 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1042).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer1' (nnet.cpp:54).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer1' (nnet.cpp:92).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer1' (nnet.cpp:101).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<100, 1, float, (_ramtype)6, 1>::getval' into 'conv_layer1' (nnet.cpp:76).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_pixels_up' into 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1018).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer2' (nnet.cpp:123).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer2' (nnet.cpp:158).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::shift_up' into 'conv_layer2' (nnet.cpp:167).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_bottom_row' into 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:1042).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer2' (nnet.cpp:124).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer2' (nnet.cpp:159).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::insert_top' into 'conv_layer2' (nnet.cpp:168).
+INFO: [XFORM 203-603] Inlining function 'xf::cv::LineBuffer<128, 1, float, (_ramtype)6, 1>::getval' into 'conv_layer2' (nnet.cpp:146).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:24 ; elapsed = 00:00:41 . Memory (MB): peak = 890.020 ; gain = 796.625
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet.cpp:83) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet.cpp:150) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer1' (nnet.cpp:277) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer2' (nnet.cpp:298) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet.cpp:319) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 890.020 ; gain = 796.625
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pool_layer2_label9' (nnet.cpp:253) in function 'pool_layer2' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'pool_layer1_label7' (nnet.cpp:210) in function 'pool_layer1' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'conv_layer1_label1' (nnet.cpp:89) in function 'conv_layer1' automatically.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label0' (nnet.cpp:228) in function 'pool_layer2' completely with a factor of 6.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label26' (nnet.cpp:229) in function 'pool_layer2' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label36' (nnet.cpp:229) in function 'pool_layer2' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label37' (nnet.cpp:249) in function 'pool_layer2' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer2_label9' (nnet.cpp:253) in function 'pool_layer2' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label6' (nnet.cpp:182) in function 'pool_layer1' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label14' (nnet.cpp:184) in function 'pool_layer1' completely with a factor of 14.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label15' (nnet.cpp:185) in function 'pool_layer1' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label18' (nnet.cpp:186) in function 'pool_layer1' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label16' (nnet.cpp:206) in function 'pool_layer1' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'pool_layer1_label7' (nnet.cpp:210) in function 'pool_layer1' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'fc_layer3_label42' (nnet.cpp:314) in function 'fc_layer3' completely with a factor of 10.
+INFO: [HLS 200-489] Unrolling loop 'fc_layer3_label14' (nnet.cpp:319) in function 'fc_layer3' completely with a factor of 10.
+INFO: [HLS 200-489] Unrolling loop 'fc_layer2_label41' (nnet.cpp:293) in function 'fc_layer2' completely with a factor of 84.
+INFO: [HLS 200-489] Unrolling loop 'fc_layer2_label11' (nnet.cpp:298) in function 'fc_layer2' completely with a factor of 84.
+INFO: [HLS 200-489] Unrolling loop 'fc_layer1_label40' (nnet.cpp:272) in function 'fc_layer1' completely with a factor of 120.
+INFO: [HLS 200-489] Unrolling loop 'fc_layer1_label15' (nnet.cpp:277) in function 'fc_layer1' completely with a factor of 120.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer2' completely with a factor of 127.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer2_label12' (nnet.cpp:133) in function 'conv_layer2' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer2_label13' (nnet.cpp:137) in function 'conv_layer2' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer2_label10' (nnet.cpp:139) in function 'conv_layer2' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer2_label11' (nnet.cpp:141) in function 'conv_layer2' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer2' completely with a factor of 127.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer2' completely with a factor of 127.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer1' completely with a factor of 99.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer1_label2' (nnet.cpp:63) in function 'conv_layer1' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer1_label6' (nnet.cpp:67) in function 'conv_layer1' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer1_label7' (nnet.cpp:69) in function 'conv_layer1' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'conv_layer1_label1' (nnet.cpp:89) in function 'conv_layer1' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer1' completely with a factor of 99.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3.1' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:867) in function 'conv_layer1' completely with a factor of 99.
+INFO: [XFORM 203-102] Partitioning array 'weight.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.3.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.3.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.2.3.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.3.3.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.0.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.0.1.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.0.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'weight.1.1.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.0.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.0.1.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.0.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.2' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.3' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.4' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.5' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.6' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer2_weights.1.1.7' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.0.3.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.1.3.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.2.3.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.0' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.0.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.1' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.1.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.2' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.2.0' automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.3' in dimension 1 automatically.
+INFO: [XFORM 203-102] Partitioning array 'conv_layer1_weights.3.3.0' automatically.
+INFO: [XFORM 203-101] Partitioning array 'pool_buff.val' (nnet.cpp:223) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'pool_buff.val' (nnet.cpp:179) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_buff.val' (nnet.cpp:114) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'conv_buff.val' (nnet.cpp:44) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer1' (nnet.cpp:83) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'conv_layer2' (nnet.cpp:150) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu' into 'fc_layer3' (nnet.cpp:319) automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_memcpy_fc_layer1_weights_proc' to a process function for dataflow in function 'nnet'.
+INFO: [XFORM 203-721] Changing loop 'Loop_2_proc' (nnet.cpp:344) to a process function for dataflow in function 'nnet'.
+INFO: [XFORM 203-712] Applying dataflow to function 'nnet', detected/extracted 9 process function(s): 
+	 'Loop_memcpy_fc_layer1_weights_proc'
+	 'Loop_2_proc130'
+	 'conv_layer1'
+	 'pool_layer1'
+	 'conv_layer2'
+	 'pool_layer2'
+	 'fc_layer1'
+	 'fc_layer2'
+	 'fc_layer3'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:06:51 ; elapsed = 00:07:10 . Memory (MB): peak = 890.020 ; gain = 796.625
+WARNING: [XFORM 203-631] Renaming function 'Loop_memcpy_fc_layer1_weights_proc' to 'Loop_memcpy_fc_layer' (nnet.cpp:337)
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[0]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[3]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[4]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[1]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[2]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[5]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[19]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[31]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[32]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[34]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[37]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[38]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[39]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[41]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[17]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[33]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[18]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[24]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[6]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[29]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[30]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[35]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[42]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[40]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[36]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[43]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[27]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[23]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[44]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[20]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[21]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[16]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[25]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[7]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[22]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[26]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[28]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[68]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[69]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[71]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[72]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[65]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[58]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[64]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[54]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[73]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[74]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[56]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[66]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[57]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[75]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[60]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[76]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[49]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[53]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[51]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[47]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[52]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[45]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[46]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[55]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[50]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[61]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[62]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[63]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[67]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[70]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[59]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[48]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[94]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[79]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[82]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[85]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[83]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[91]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[95]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[96]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[97]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[80]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[99]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[100]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[101]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[81]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[102]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[103]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[84]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[88]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[86]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[92]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[98]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[104]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[106]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[107]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[90]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[108]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[77]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[93]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[105]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[78]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[87]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[89]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[113]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[116]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[122]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[109]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[114]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[115]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[111]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[118]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[123]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[125]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[110]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[119]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[121]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[124]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[126]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[117]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[127]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'conv_buff.val[120]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[0]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[3]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[4]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[1]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[2]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[5]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[19]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[31]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[32]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[34]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[37]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[38]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[39]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[41]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[17]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[33]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[18]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[24]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[6]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[29]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[30]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[35]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[42]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[40]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[36]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[43]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[27]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[23]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[44]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[20]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[21]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[16]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[25]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[7]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[22]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[26]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[28]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[68]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[69]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[71]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[72]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[65]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[58]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[64]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[54]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[73]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[74]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[56]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[66]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[57]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[75]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[60]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[76]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[49]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[53]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[51]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[47]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[52]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[45]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[46]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[55]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[50]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[61]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[62]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[63]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[67]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[70]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[59]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[48]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[94]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[79]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[82]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[85]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[83]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[91]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[95]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[96]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[97]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[80]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[99]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[100]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[101]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[81]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[102]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[103]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[84]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[88]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[86]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[92]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[98]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[104]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[106]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[107]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[90]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[108]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[77]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[93]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[105]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[78]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[87]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[89]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[113]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[116]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[122]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[109]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[114]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[115]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[111]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[118]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[123]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[125]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[110]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[119]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[121]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[124]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[126]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[117]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[127]' (nnet.cpp:114).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'conv_buff.val[120]' (nnet.cpp:114).
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:306:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:310:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:315:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:285:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:289:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:294:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:264:31)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:268:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'output' (nnet.cpp:273:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'conv_buff.val[0]' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:871:6)
+INFO: [HLS 200-472] Inferring partial write operation for 'conv_buff.val[127]' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:908:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'conv_buff.val[0]' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:871:6)
+INFO: [HLS 200-472] Inferring partial write operation for 'conv_buff.val[127]' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:908:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'conv_buff.val[0]' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:871:6)
+INFO: [HLS 200-472] Inferring partial write operation for 'conv_buff.val[127]' (C:\Xilinx\Vitis\2020.1\include\multimediaIps\xf_video_mem.hpp:908:5)
+INFO: [HLS 200-472] Inferring partial write operation for 'fc_layer1_weights' (nnet.cpp:337)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:07:48 ; elapsed = 00:08:10 . Memory (MB): peak = 890.020 ; gain = 796.625
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'nnet' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_memcpy_fc_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 492.262 seconds; current allocated memory: 359.445 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.208 seconds; current allocated memory: 359.558 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_2_proc130' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.229 seconds; current allocated memory: 359.708 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.189 seconds; current allocated memory: 359.780 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.065 seconds; current allocated memory: 363.612 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.942 seconds; current allocated memory: 367.540 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 21.454 seconds; current allocated memory: 380.483 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 10.047 seconds; current allocated memory: 399.524 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 14.505 seconds; current allocated memory: 414.436 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_0' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_1' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_2' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_3' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_4' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_5' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_6' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_7' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_16' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_17' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_18' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_19' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_20' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_21' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_22' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_23' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_24' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_25' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_26' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_27' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_28' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_29' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_30' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_31' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_32' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_33' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_34' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_35' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_36' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_37' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_38' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_39' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_40' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_41' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_42' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_43' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_44' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_45' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_46' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_47' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_48' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_49' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_50' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_51' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_52' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_53' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_54' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_55' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_56' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_57' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_58' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_59' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_60' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_61' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_62' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_63' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_64' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_65' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_66' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_67' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_68' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_69' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_70' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_71' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_72' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_73' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_74' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_75' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_76' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_77' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_78' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_79' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_80' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_81' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_82' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_83' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_84' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_85' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_86' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_87' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_88' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_89' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_90' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_91' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_92' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_93' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_94' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_95' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_96' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_97' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_98' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_99' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_100' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_101' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_102' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_103' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_104' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_105' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_106' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_107' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_108' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_109' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_110' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_111' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_113' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_114' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_115' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_116' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_117' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_118' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_119' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_120' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_121' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_122' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_123' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_124' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_125' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_126' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'conv_buff_val_127' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 7.875 seconds; current allocated memory: 423.934 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 18.181 seconds; current allocated memory: 434.111 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 5.851 seconds; current allocated memory: 445.348 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'relu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.548 seconds; current allocated memory: 447.601 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.248 seconds; current allocated memory: 447.657 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.415 seconds; current allocated memory: 453.034 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.469 seconds; current allocated memory: 458.329 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.962 seconds; current allocated memory: 462.678 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 2.594 seconds; current allocated memory: 466.926 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_layer3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.238 seconds; current allocated memory: 468.126 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.859 seconds; current allocated memory: 468.939 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'nnet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.781 seconds; current allocated memory: 469.173 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 8.975 seconds; current allocated memory: 482.528 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_memcpy_fc_layer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_memcpy_fc_layer_nnet_stream_fc_laye' to 'Loop_memcpy_fc_labkb' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_memcpy_fc_layer'.
+INFO: [HLS 200-111]  Elapsed time: 4.076 seconds; current allocated memory: 488.190 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_2_proc130' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_2_proc130_image_r' to 'Loop_2_proc130_imcud' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_2_proc130'.
+INFO: [HLS 200-111]  Elapsed time: 0.389 seconds; current allocated memory: 488.729 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'nnet_fadd_32ns_32ns_32_3_full_dsp_1' to 'nnet_fadd_32ns_32dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_fmul_32ns_32ns_32_2_max_dsp_1' to 'nnet_fmul_32ns_32eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'nnet_fcmp_32ns_32ns_1_2_1' to 'nnet_fcmp_32ns_32fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32dEe': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32eOg': 5 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer1'.
+INFO: [HLS 200-111]  Elapsed time: 0.622 seconds; current allocated memory: 492.807 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer1'.
+INFO: [HLS 200-111]  Elapsed time: 6.088 seconds; current allocated memory: 561.585 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_0' to 'conv_layer2_conv_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_1' to 'conv_layer2_conv_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_2' to 'conv_layer2_conv_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_3' to 'conv_layer2_conv_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_4' to 'conv_layer2_conv_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_5' to 'conv_layer2_conv_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_6' to 'conv_layer2_conv_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_7' to 'conv_layer2_conv_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_16' to 'conv_layer2_conv_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_17' to 'conv_layer2_conv_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_18' to 'conv_layer2_conv_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_19' to 'conv_layer2_conv_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_20' to 'conv_layer2_conv_sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_21' to 'conv_layer2_conv_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_22' to 'conv_layer2_conv_udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_23' to 'conv_layer2_conv_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_24' to 'conv_layer2_conv_wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_25' to 'conv_layer2_conv_xdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_26' to 'conv_layer2_conv_yd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_27' to 'conv_layer2_conv_zec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_28' to 'conv_layer2_conv_Aem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_29' to 'conv_layer2_conv_Bew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_30' to 'conv_layer2_conv_CeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_31' to 'conv_layer2_conv_DeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_32' to 'conv_layer2_conv_Ee0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_33' to 'conv_layer2_conv_Ffa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_34' to 'conv_layer2_conv_Gfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_35' to 'conv_layer2_conv_Hfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_36' to 'conv_layer2_conv_IfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_37' to 'conv_layer2_conv_JfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_38' to 'conv_layer2_conv_KfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_39' to 'conv_layer2_conv_Lf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_40' to 'conv_layer2_conv_Mgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_41' to 'conv_layer2_conv_Ngs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_42' to 'conv_layer2_conv_OgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_43' to 'conv_layer2_conv_PgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_44' to 'conv_layer2_conv_QgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_45' to 'conv_layer2_conv_Rg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_46' to 'conv_layer2_conv_Shg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_47' to 'conv_layer2_conv_Thq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_48' to 'conv_layer2_conv_UhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_49' to 'conv_layer2_conv_VhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_50' to 'conv_layer2_conv_WhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_51' to 'conv_layer2_conv_Xh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_52' to 'conv_layer2_conv_Yie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_53' to 'conv_layer2_conv_Zio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_54' to 'conv_layer2_conv_0iy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_55' to 'conv_layer2_conv_1iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_56' to 'conv_layer2_conv_2iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_57' to 'conv_layer2_conv_3i2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_58' to 'conv_layer2_conv_4jc' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_59' to 'conv_layer2_conv_5jm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_60' to 'conv_layer2_conv_6jw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_61' to 'conv_layer2_conv_7jG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_62' to 'conv_layer2_conv_8jQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_63' to 'conv_layer2_conv_9j0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_64' to 'conv_layer2_conv_bak' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_65' to 'conv_layer2_conv_bbk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_66' to 'conv_layer2_conv_bck' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_67' to 'conv_layer2_conv_bdk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_68' to 'conv_layer2_conv_bek' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_69' to 'conv_layer2_conv_bfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_70' to 'conv_layer2_conv_bgk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_71' to 'conv_layer2_conv_bhl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_72' to 'conv_layer2_conv_bil' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_73' to 'conv_layer2_conv_bjl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_74' to 'conv_layer2_conv_bkl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_75' to 'conv_layer2_conv_bll' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_76' to 'conv_layer2_conv_bml' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_77' to 'conv_layer2_conv_bnm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_78' to 'conv_layer2_conv_bom' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_79' to 'conv_layer2_conv_bpm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_80' to 'conv_layer2_conv_bqm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_81' to 'conv_layer2_conv_brm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_82' to 'conv_layer2_conv_bsm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_83' to 'conv_layer2_conv_btn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_84' to 'conv_layer2_conv_bun' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_85' to 'conv_layer2_conv_bvn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_86' to 'conv_layer2_conv_bwn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_87' to 'conv_layer2_conv_bxn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_88' to 'conv_layer2_conv_byn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_89' to 'conv_layer2_conv_bzo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_90' to 'conv_layer2_conv_bAo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_91' to 'conv_layer2_conv_bBo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_92' to 'conv_layer2_conv_bCo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_93' to 'conv_layer2_conv_bDo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_94' to 'conv_layer2_conv_bEo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_95' to 'conv_layer2_conv_bFp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_96' to 'conv_layer2_conv_bGp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_97' to 'conv_layer2_conv_bHp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_98' to 'conv_layer2_conv_bIp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_99' to 'conv_layer2_conv_bJp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_100' to 'conv_layer2_conv_bKp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_101' to 'conv_layer2_conv_bLp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_102' to 'conv_layer2_conv_bMq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_103' to 'conv_layer2_conv_bNq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_104' to 'conv_layer2_conv_bOq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_105' to 'conv_layer2_conv_bPq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_106' to 'conv_layer2_conv_bQq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_107' to 'conv_layer2_conv_bRq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_108' to 'conv_layer2_conv_bSr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_109' to 'conv_layer2_conv_bTr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_110' to 'conv_layer2_conv_bUr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_111' to 'conv_layer2_conv_bVr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_113' to 'conv_layer2_conv_bWr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_114' to 'conv_layer2_conv_bXr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_115' to 'conv_layer2_conv_bYs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_116' to 'conv_layer2_conv_bZs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_117' to 'conv_layer2_conv_b0s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_118' to 'conv_layer2_conv_b1s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_119' to 'conv_layer2_conv_b2s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_120' to 'conv_layer2_conv_b3s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_121' to 'conv_layer2_conv_b4t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_122' to 'conv_layer2_conv_b5t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_123' to 'conv_layer2_conv_b6t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_124' to 'conv_layer2_conv_b7t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_125' to 'conv_layer2_conv_b8t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_126' to 'conv_layer2_conv_b9t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'conv_layer2_conv_buff_val_127' to 'conv_layer2_conv_cau' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32dEe': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32eOg': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_layer2'.
+INFO: [HLS 200-111]  Elapsed time: 26.069 seconds; current allocated memory: 645.926 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32fYi': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_layer2'.
+INFO: [HLS 200-111]  Elapsed time: 11.89 seconds; current allocated memory: 701.080 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'relu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'relu'.
+INFO: [HLS 200-111]  Elapsed time: 15.607 seconds; current allocated memory: 773.241 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32dEe': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32eOg': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer1'.
+INFO: [HLS 200-111]  Elapsed time: 2.95 seconds; current allocated memory: 785.183 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fc_layer2_fc_layer2_weights' to 'fc_layer2_fc_layecbu' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32dEe': 76 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32eOg': 76 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer2'.
+INFO: [HLS 200-111]  Elapsed time: 7.892 seconds; current allocated memory: 811.780 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_layer3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'fc_layer3_fc_layer3_weights' to 'fc_layer3_fc_layeccu' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'nnet_fadd_32ns_32dEe': 6 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fcmp_32ns_32fYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'nnet_fmul_32ns_32eOg': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_layer3'.
+INFO: [HLS 200-111]  Elapsed time: 6.196 seconds; current allocated memory: 827.324 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'nnet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'nnet/fc3_out_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'nnet' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'nnet_fc_layer1_weights' to 'nnet_fc_layer1_wecdu' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'nnet'.
+INFO: [HLS 200-111]  Elapsed time: 2.429 seconds; current allocated memory: 831.016 MB.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 85.15 MHz
+INFO: [RTMG 210-279] Implementing memory 'Loop_memcpy_fc_labkb_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'Loop_2_proc130_imcud_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'conv_layer2_conv_g8j_ram (RAM_S2P_BRAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'conv_layer2_conv_bVr_ram (RAM_S2P_BRAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'fc_layer1_output_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-279] Implementing memory 'fc_layer2_fc_layecbu_rom' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'fc_layer2_output_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-279] Implementing memory 'fc_layer3_fc_layeccu_rom' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'fc_layer3_output_ram (RAM)' using block RAMs.
+INFO: [HLS 200-740] Implementing PIPO nnet_fc_layer1_wecdu_memcore using a separate memory for each block
+INFO: [RTMG 210-278] Implementing memory 'nnet_fc_layer1_wecdu_memcore_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'image_in_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'conv1_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'pool1_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'conv2_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'pool2_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fc1_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fc2_out_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [HLS 200-740] Implementing PIPO nnet_fc_layer1_wecdu_memcore using a separate memory for each block
+INFO: [HLS 200-740] Implementing PIPO nnet_fc_layer1_wecdu_memcore using a separate memory for each block
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:11:05 ; elapsed = 00:12:07 . Memory (MB): peak = 1174.289 ; gain = 1080.895
+INFO: [VHDL 208-304] Generating VHDL RTL for nnet.
+INFO: [VLOG 209-307] Generating Verilog RTL for nnet.
+INFO: [HLS 200-112] Total elapsed time: 727.49 seconds; peak allocated memory: 831.016 MB.
