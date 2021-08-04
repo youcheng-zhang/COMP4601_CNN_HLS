@@ -55,7 +55,7 @@ int main()
 	const clock_t begin_time = clock();
 	nnet(FC3_out);
 
-	std::cout << "this is the time difference" << float( clock () - begin_time );
+	std::cout << "time difference: " << float( clock () - begin_time ) << " ms.";
 
 	for(i = 0; i < FC3_ACT_SIZE; i++) {
 		FC3_out>>fc_layer3_out[i];
