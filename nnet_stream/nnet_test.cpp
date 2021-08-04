@@ -38,7 +38,7 @@ typedef float float24_t;
 
 #define eps 0.1
 
-void nnet(hls::stream<float24_t> &fc3_out);
+void nnet(hls::stream<float24_t> &fc3_out, int index);
 
 int main()
 {
@@ -53,7 +53,10 @@ int main()
 	int correct_values, total_values;
 
 	const clock_t begin_time = clock();
-	nnet(FC3_out);
+	for(int i = 0; i<10; i++){
+		nnet(FC3_out,i);
+	}
+	//nnet(FC3_out);
 
 	std::cout << "time difference: " << float( clock () - begin_time ) << " ms.";
 
